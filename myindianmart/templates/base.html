@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Star Social</title>
+    <!-- Latest compiled and minified CSS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="{% static 'js/master.js' %}">
+    <script>
+          $(function () {
+            $(document).scroll(function () {
+              var $nav = $(".sticky-top");
+              $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+          });
+
+    	</script>
+
+  </head>
+
+
+  <body>
+
+
+    <div class="nav-bar">
+
+
+    <ul class="j-menu">
+      <a class="navbar-brand" href='#'><h2 style="color:white">My Indian Mart</h2></a>
+
+
+      <li>
+        <div class="jas-col-md-8 hidden-sm jas_div_nav">
+                    <div class="wrapper-search-full pr tc">
+                       <form role="search" method="get" class="pr searchform gecko-ajax-search" action="/search">
+                          <div>
+                             <label class="screen-reader-text" for="q"></label>
+
+                             <input type="text" placeholder="Search for products" value="" name="q" id="qfull9" autocomplete="off"><input type="hidden" name="type" value="product"><button type="submit" class="search_btn_sub" id="qfull9submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                          </div>
+                       </form>
+                       <div class="search-results-wrapper tl">
+                          <div class="gecko-search-results">
+                             <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content autocomplete-suggestions dn" style="display: none;"></ul>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+      </li>
+      <div class="follow">
+        <li class="nav-item active size">
+          <a class="nav-link" href="#" style="color: blue;"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li>
+           <a class="nav-link" href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i> <span class="sr-only">(current)</span></a>
+        </li>
+
+      </div>
+
+
+
+    </ul>
+
+    </div>
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<!-- <div class="nav-middle">
+  <div class="menu-1">
+    <ul class="j-menu">
+      <li>
+         <a class="nav-link" href="#">Deals <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
+         <a class="nav-link" href="#">Clothes <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
+         <a class="nav-link" href="#">Accesories <span class="sr-only">(current)</span></a>
+      </li>
+
+
+
+    </ul>
+
+  </div>
+  <div class="menu-1">
+    <ul class="j-menu">
+      <li>
+         <a class="nav-link" href="#">Blogs <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
+         <a class="nav-link" href="#">Login <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
+         <a class="nav-link" href="#">Signup <span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+</div> -->
+
+
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+    <nav class="text-nav navbar sticky-top scrolled nav-colored nav-transparent navbar-expand-lg navbar-dark bg-success">
+        <!-- <a class="navbar-brand" href='#'>My Indian Mart</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02 #navbarNavDropdown" aria-controls="navbarTogglerDemo02 navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02 navbarNavDropdown">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          {% if user.is_authenticated %}
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Blogs <span class="sr-only">(current)</span></a>
+              </li>
+
+
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'basicapp:logout' %}">logout <span class="sr-only">(current)</span></a>
+              </li>
+          {% else %}
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Foreign products <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Accesories <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Clothing <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><b>Blogs</b><span class="sr-only">(current)</span></a>
+              </li>
+
+
+          {% endif %}
+
+        </ul>
+        <ul class=" nav navbar-nav pull-sm-right">
+
+
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'basicapp:login' %}">login <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'basicapp:signup' %}">signup <span class="sr-only">(current)</span></a>
+          </li>
+
+       </ul>
+       <ul >
+        {% if user.is_authenticated %}
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://www.pngitem.com/pimgs/m/391-3918613_personal-service-platform-person-icon-circle-png-transparent.png" alt="" height='50'> {{user.username}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">create group</a>
+                  <a class="dropdown-item" href="{% url 'basicapp:logout' %}">logout </a>
+                  <a class="dropdown-item" href="#">Your products</a>
+
+                </div>
+            </div>
+        {% endif %}
+        </ul>
+
+        </div>
+      </nav>
+
+      <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <form class="form-inline id" action="/action_page.php">
+          <input class="form-control mr-sm-2 serch" type="text" placeholder="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </nav> -->
+
+
+        <div>
+          {% block content %}
+
+          {% endblock %}
+
+        </div>
+
+
+
+<canvas id="canvas"></canvas>
+
+
+
+  </body>
+  <script src="{% static "simplesocial/js/master.js"%}" type="text/javascript" ></script>
+</html>
